@@ -22,6 +22,20 @@
     text-align: center;
 }
 
+.btn-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Select all children */
+.btn-row > * {
+    margin-left: 1rem;
+}
+
+.btn-row > *:first-child {
+    margin-left: 0;
+}
+
 .btn-primary {
     color: var(--color-btn-primary-text);
     background-color: var(--color-btn-primary-background);
