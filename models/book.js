@@ -1,19 +1,47 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const BookSchema = new Schema({
-    title: {type: String, required: true},
-    author: {type: Schema.Types.ObjectId, ref: "Author", required: true},
-    summary: {type: String, required: true},
-    isbn: {type: String, required: true},
-    genre: [{type: Schema.Types.ObjectId, ref: "Genre"}]
+const bookSchema = new Schema({
+    title: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String,
+    },
+    publishDate: {
+        type: Date, 
+        required: true
+    },
+    pageCount: {
+        type: Number,
+        required: true
+    },
+    createdAt: {
+        type: Date, 
+        required: true,
+        default: Date.now
+    },
+    coverImage: {
+        type: Buffer, 
+        required: true
+    },
+    coverImageType: {
+        type: String,
+        required: true,
+    },
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: 'Author',
+        required: true
+    }
 })
 
 
-// Virtual for books URL
-BookSchema.virtual("url").get(function() {
-    return "/catalog/book/" + this._id
+bookSchema.virtual('coverImagePath').get(function() {
+    if (this.coverImage != null && this.coverImageType != null) {
+        return `data: ${this.coverImageType};charset=utf-8;base64,${this.coverImage.toString('base64')}`
+    }
 })
 
-
-module.exports = mongoose.model("Book", BookSchema)
+module.exports = mongoose.model('Book', bookSchema)
