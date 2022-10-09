@@ -26,6 +26,10 @@
     flex-grow: 0;
 }
 
+.form-row-end {
+    justify-content: flex-end;
+}
+
 .form-item > label {
     font-size: var(--form-label-font-size);
     margin-bottom: .25rem;
