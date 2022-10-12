@@ -94,4 +94,4 @@ exports.logout = (req, res) => {
       req.user = null
       res.redirect('/')
     })
-  }
+}
