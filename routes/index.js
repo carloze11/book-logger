@@ -19,5 +19,7 @@ router.get('/', async (req, res) => {
 
 router.get('/login', authController.getLogin)
 router.post('/login', authController.postLogin)
+router.get('/sign-up', authController.getSignUp)
+router.post('/sign-up', authController.postSignUp)
 
 module.exports = router
