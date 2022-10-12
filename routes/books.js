@@ -13,6 +13,9 @@ const imageMimeTypes = ['image/jpeg', 'image/png', 'image/gif']
 
 // get all books
 router.get('/', async (req, res) => {
+    if (!req.user) {
+        return res.redirect('login')
+    }
     let query = Book.find()
     if (req.query.title != null && req.query.title != '') {
         query = query.regex('title', new RegExp(req.query.title, 'i'))
@@ -36,6 +39,9 @@ router.get('/', async (req, res) => {
 
 // new book route
 router.get('/new', async (req, res) => {
+    if (!req.user) {
+        return res.redirect('login')
+    }
     renderNewPage(res, new Book())
 })
 
@@ -59,6 +65,7 @@ router.post('/', async (req, res) => {
 
 
 router.get('/:id', async (req, res) => {
+    
     try {
         const book = await Book.findById(req.params.id).populate('author').exec()
         res.render('books/show', {

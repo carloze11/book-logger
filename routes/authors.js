@@ -5,6 +5,9 @@ const Book = require('../models/book')
 
 // get all authors
 router.get('/', async (req, res) => {
+    if (!req.user) {
+        return res.redirect('login')
+    }
     let searchOptions = {}
     if (req.query.name != null && req.query.name !== '') {
         searchOptions.name = new RegExp(req.query.name, 'i')
@@ -21,6 +24,9 @@ router.get('/', async (req, res) => {
 
 // new author route
 router.get('/new', (req, res) => {
+    if (!req.user) {
+        return res.redirect('login')
+    }
     res.render('authors/new', { author: new Author() })
 })
 
