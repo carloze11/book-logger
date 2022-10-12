@@ -8,11 +8,23 @@
 </head>
 <body>
     <h2>Login</h2>
+    
+    <% if (locals.messages.errors) { %>
+        <% messages.errors.forEach( el => { %>
+            <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %>    
+    <% } %>
+    <% if (locals.messages.info) { %>
+        <% messages.info.forEach( el => { %>
+            <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %>    
+    <% } %>
+
     <form action="/login" method="POST">
         <input type="text" name="username" placeholder="Username">
         <input type="password" name="password" placeholder="Password">
         <input type="submit">
     </form>
-    <a href="/sign-up" method="GET">Sign Up</a>
+    <a href="/sign-up">Sign Up</a>
 </body>
 </html>
