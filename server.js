@@ -12,6 +12,7 @@ const methodOverride = require('method-override')
 const passport = require('passport')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
+const bcrypt = require('bcrypt')
 const flash = require('express-flash')
 
 const indexRouter = require('./routes/index')

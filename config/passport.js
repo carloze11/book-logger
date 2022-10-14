@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const User = require('../models/user')
 
 module.exports = function(passport) {
-    passport.use(new LocalStrategy({ usernameField: 'userName'}, (userName, password, done) => {
+    passport.use(new LocalStrategy({ usernameField: 'username'}, (userName, password, done) => {
         User.findOne({ userName: userName.toLowerCase()}, (err, user) => {
             if (err) {return done(err)}
             if (!user) {
