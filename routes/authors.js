@@ -1,13 +1,14 @@
 const express = require('express')
+const { ensureAuth } = require('../middleware/auth')
 const router = express.Router()
 const Author = require('../models/author')
 const Book = require('../models/book')
 
 // get all authors
-router.get('/', async (req, res) => {
-    if (!req.user) {
-        return res.redirect('login')
-    }
+router.get('/', ensureAuth, async (req, res) => {
+    // if (!req.user) {
+    //     return res.redirect('login')
+    // }
     let searchOptions = {}
     if (req.query.name != null && req.query.name !== '') {
         searchOptions.name = new RegExp(req.query.name, 'i')

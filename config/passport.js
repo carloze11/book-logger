@@ -2,15 +2,30 @@ const LocalStrategy = require('passport-local').Strategy
 const mongoose = require('mongoose')
 const User = require('../models/user')
 
+
 module.exports = function(passport) {
-    passport.use(new LocalStrategy({ usernameField: 'username'}, (userName, password, done) => {
-        User.findOne({ userName: userName.toLowerCase()}, (err, user) => {
+    // const authenticateUser = (username, password, done) => {
+    //     const user = getUserByUsername(username)
+    //     if (!user) {
+    //         return done (null, false, {msg: 'No user with that username'})
+    //     }
+
+    //     try {
+    //         if (await.bcrypt.compare(password, user.password)) {
+    //             return done(null, user)
+    //         } else {
+    //             return done(null, false, {msg: 'Password incorrect'})
+    //         }
+
+    //     } catch (e) {
+    //         return done(e)
+    //     }
+    // }
+    passport.use(new LocalStrategy({ usernameField: 'username'}, (username, password, done) => {
+        User.findOne({ userName: username.toLowerCase()}, (err, user) => {
             if (err) {return done(err)}
             if (!user) {
-                return done(null, false, { msg: `Username ${userName} not found.`})
-            }
-            if (!user.password) {
-                return done(null, false, { msg: 'Your account was registered using a sign-in provider. To enable password login, sign in using a provider, and then set a password under your user profile.'})
+                return done(null, false, { msg: `Username ${username} not found.`})
             }
             user.comparePassword(password, (err, isMatch) => {
                 if (err) {return done(err)}
