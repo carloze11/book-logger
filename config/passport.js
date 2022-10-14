@@ -3,11 +3,11 @@ const mongoose = require('mongoose')
 const User = require('../models/user')
 
 module.exports = function(passport) {
-    passport.use(new LocalStrategy({ usernameField: 'username'}, (username, password, done) => {
-        User.findOne({ username: username.toLowerCase()}, (err, user) => {
+    passport.use(new LocalStrategy({ usernameField: 'userName'}, (userName, password, done) => {
+        User.findOne({ userName: userName.toLowerCase()}, (err, user) => {
             if (err) {return done(err)}
             if (!user) {
-                return done(null, false, { msg: `Username ${username} not found.`})
+                return done(null, false, { msg: `Username ${userName} not found.`})
             }
             if (!user.password) {
                 return done(null, false, { msg: 'Your account was registered using a sign-in provider. To enable password login, sign in using a provider, and then set a password under your user profile.'})

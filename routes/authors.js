@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
         searchOptions.name = new RegExp(req.query.name, 'i')
     }
     try {
-        const authors = await Author.find(searchOptions)
+        const authors = await Author.find({userId: req.user.id}, searchOptions)
         res.render('authors/index', { 
             authors: authors, 
             searchOptions: req.query})
@@ -34,6 +34,7 @@ router.get('/new', (req, res) => {
 router.post('/', async (req, res) => {
     const author = new Author({
         name: req.body.name,
+        userId: req.user.id
     })
     try {
         const newAuthor = await author.save()
@@ -74,6 +75,7 @@ router.put('/:id', async (req, res) => {
     try {
         author = await Author.findById(req.params.id)
         author.name = req.body.name
+        author.userId = req.user.id
         await author.save()
         res.redirect(`/authors/${author.id}`)
     } catch {

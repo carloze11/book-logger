@@ -6,6 +6,10 @@ const authorSchema = new Schema({
         type: String,
         required: true
     },
+    userId: {
+        type: String,
+        required: true
+    }
 })
 
 // Prevent author from being removed if depended on

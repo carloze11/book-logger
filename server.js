@@ -29,16 +29,6 @@ const db = mongoose.connection
 db.on('error', error => console.error(error))
 db.once('open', () => console.log('Connected to Mongoose'))
 
-// Sessions
-app.use(
-  session({
-    secret: 'keyboard cat',
-    resave: false,
-    saveUninitialized: false,
-    store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
-  })
-)
-
 
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
@@ -48,6 +38,16 @@ app.use(methodOverride('_method'))
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false}))
 
+
+// Sessions
+app.use(
+  session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
+  })
+)
 
 // Passport middleware
 app.use(passport.initialize())

@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Book = require('../models/book')
 const Author = require('../models/author')
+const {ensureAuth} = require('../middleware/auth')
 const imageMimeTypes = ['image/jpeg', 'image/png', 'image/gif']
 // const upload = multer({
 //     dest: uploadPath,
@@ -12,11 +13,8 @@ const imageMimeTypes = ['image/jpeg', 'image/png', 'image/gif']
 
 
 // get all books
-router.get('/', async (req, res) => {
-    if (!req.user) {
-        return res.redirect('login')
-    }
-    let query = Book.find()
+router.get('/', ensureAuth, async (req, res) => {
+    let query = await Book.find({userId:req.user.id})
     if (req.query.title != null && req.query.title != '') {
         query = query.regex('title', new RegExp(req.query.title, 'i'))
     }
@@ -38,21 +36,19 @@ router.get('/', async (req, res) => {
 })
 
 // new book route
-router.get('/new', async (req, res) => {
-    if (!req.user) {
-        return res.redirect('login')
-    }
+router.get('/new', ensureAuth, async (req, res) => {
     renderNewPage(res, new Book())
 })
 
 // create book route
-router.post('/', async (req, res) => {
+router.post('/', ensureAuth, async (req, res) => {
     const book = new Book({
         title: req.body.title,
         author: req.body.author,
         publishDate: new Date(req.body.publishDate),
         pageCount: req.body.pageCount,
         description: req.body.description,
+        userId: req.user.id
     })
     saveCover(book, req.body.cover)
     try {
@@ -95,6 +91,7 @@ router.put('/:id', async (req, res) => {
         book.publishDate = new Date(req.body.publishDate)
         book.pageCount = req.body.pageCount
         book.description = req.body.description
+        book.userId = req.user.id
         if (req.body.cover != null && req.body.cover !== ''){
             saveCover(book, req.body.cover)
         }
@@ -141,7 +138,7 @@ async function renderEditPage(res, book, hasError = false) {
 
 async function renderFormPage(res, book, form, hasError = false) {
     try {
-        const authors = await Author.find({});
+        const authors = await Author.find({userId:req.user.id});
         const params = {
             authors: authors,
             book: book,
