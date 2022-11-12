@@ -69,7 +69,7 @@
 
 ## About The Project
 
-![Product Name Screen Shot][product-screenshot] <!-- (https://example.com) -->
+![LoggerHead Screen Shot][product-screenshot] <!-- (https://example.com) -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -184,10 +184,10 @@ Project Link: [https://github.com/carloze11/logger-head](https://github.com/carl
 [issues-shield]: https://img.shields.io/github/issues/carloze11/logger-head.svg?style=for-the-badge
 [issues-url]: https://github.com/carloze11/logger-head/issues
 [license-shield]: https://img.shields.io/github/license/carloze11/logger-head.svg?style=for-the-badge
-[license-url]: https://github.com/carloze11/logger-head/blob/master/LICENSE.txt
+[license-url]: https://github.com/carloze11/logger-head/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/carlosxestrada
-[product-screenshot]: public/logger-head-demo.png
+[product-screenshot]: public/loggerhead-demo.png
 [node.js]: https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white
 [node-url]: https://nodejs.org/en/
 [express.js]: https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB
