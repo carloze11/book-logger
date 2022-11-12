@@ -13,7 +13,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+[![MIT License][license-shield]](./LICENSE.txt)
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
@@ -183,7 +183,7 @@ Project Link: [https://github.com/carloze11/logger-head](https://github.com/carl
 [stars-url]: https://github.com/carloze11/logger-head/stargazers
 [issues-shield]: https://img.shields.io/github/issues/carloze11/logger-head.svg?style=for-the-badge
 [issues-url]: https://github.com/carloze11/logger-head/issues
-[license-shield]: https://img.shields.io/github/license/carloze11/logger-head.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/carloze11/logger-head?style=for-the-badge
 [license-url]: https://github.com/carloze11/logger-head/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/carlosxestrada
