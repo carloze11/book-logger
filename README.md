@@ -19,7 +19,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <!-- <a href="https://github.com/carloze11/loggerhead">
+  <!-- <a href="https://github.com/carloze11/logger-head">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a> -->
 
@@ -28,14 +28,14 @@
   <p align="center">
     A fullstack web application created to help with learning the back end. I was able to use this project as an introduction to Node.js, Express, and MongoDB. LoggerHead will allow users to log items and save them into individual lists, for example: a list of books read, movies watched, etc. Each item will include additional information, such as ratings, links to product, etc.  
     <br />
-    <a href="https://github.com/carloze11/loggerhead"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/carloze11/logger-head"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/carloze11/loggerhead">View Demo</a>
+    <a href="https://github.com/carloze11/logger-head">View Demo</a>
     ·
-    <a href="https://github.com/carloze11/loggerhead/issues">Report Bug</a>
+    <a href="https://github.com/carloze11/logger-head/issues">Report Bug</a>
     ·
-    <a href="https://github.com/carloze11/loggerhead/issues">Request Feature</a>
+    <a href="https://github.com/carloze11/logger-head/issues">Request Feature</a>
   </p>
 </div>
 
@@ -100,7 +100,7 @@
 
 1. Clone the repo
     ```sh
-    git clone https://github.com/carloze11/loggerhead.git
+    git clone https://github.com/carloze11/logger-head.git
     ```
 2. Install NPM packages
     ```sh
@@ -125,7 +125,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 -   [ ] Allow images to be saved to db using cloudinary urls
 -   [ ] Add the Movie Database API and Google's Books API for easier search/add
 
-See the [open issues](https://github.com/carloze11/loggerhead/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/carloze11/logger-head/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -160,7 +160,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Carlos A. Estrada - [@carlosestrawda](https://twitter.com/carlosestrawda) - cestrada1109@gmail.com
 
-Project Link: [https://github.com/carloze11/loggerhead](https://github.com/carloze11/loggerhead)
+Project Link: [https://github.com/carloze11/logger-head](https://github.com/carloze11/logger-head)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -175,19 +175,19 @@ Project Link: [https://github.com/carloze11/loggerhead](https://github.com/carlo
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/carloze11/loggerhead.svg?style=for-the-badge
-[contributors-url]: https://github.com/carloze11/loggerhead/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/carloze11/loggerhead.svg?style=for-the-badge
-[forks-url]: https://github.com/carloze11/loggerhead/network/members
-[stars-shield]: https://img.shields.io/github/stars/carloze11/loggerhead.svg?style=for-the-badge
-[stars-url]: https://github.com/carloze11/loggerhead/stargazers
-[issues-shield]: https://img.shields.io/github/issues/carloze11/loggerhead.svg?style=for-the-badge
-[issues-url]: https://github.com/carloze11/loggerhead/issues
-[license-shield]: https://img.shields.io/github/license/carloze11/loggerhead.svg?style=for-the-badge
-[license-url]: https://github.com/carloze11/loggerhead/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/carloze11/logger-head.svg?style=for-the-badge
+[contributors-url]: https://github.com/carloze11/logger-head/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/carloze11/logger-head.svg?style=for-the-badge
+[forks-url]: https://github.com/carloze11/logger-head/network/members
+[stars-shield]: https://img.shields.io/github/stars/carloze11/logger-head.svg?style=for-the-badge
+[stars-url]: https://github.com/carloze11/logger-head/stargazers
+[issues-shield]: https://img.shields.io/github/issues/carloze11/logger-head.svg?style=for-the-badge
+[issues-url]: https://github.com/carloze11/logger-head/issues
+[license-shield]: https://img.shields.io/github/license/carloze11/logger-head.svg?style=for-the-badge
+[license-url]: https://github.com/carloze11/logger-head/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/carlosxestrada
-[product-screenshot]: public/loggerhead-demo.png
+[product-screenshot]: public/logger-head-demo.png
 [node.js]: https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white
 [node-url]: https://nodejs.org/en/
 [express.js]: https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB
